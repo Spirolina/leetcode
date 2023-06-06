@@ -15,22 +15,18 @@ var topKFrequent = function (nums, k) {
             if (outs.length === k) {
                 if (count > minCount) {
                     outs.splice(0, 1, [nums[i], count]);
-                    
                     outs = outs.sort((a, b) => a[1] - b[1])
                     minCount = outs[0][1]
-                    
                 } 
             }
             else {
                 outs.push([nums[i], count])
             }
-           
             break;
         }
         if (nums[i] === nums[i + 1]) {
             count++;
-        } 
-
+        }
         if (nums[i] !== nums[i + 1]) {
             if (outs.length === k) {
                 minCount = outs[0][1]
@@ -39,20 +35,15 @@ var topKFrequent = function (nums, k) {
                     count = 1;
                     continue;
                 }
-
                 outs.splice(0, 1, [nums[i], count]);
-                
                 outs = outs.sort((a, b) => a[1] - b[1])
                 count = 1;
                 continue;
             }
-
             outs.push([nums[i], count]);
             outs = outs.sort((a, b) => a[1] - b[1])
-
             count = 1;
         }
-
     }
     
     result = outs.map(a => a[0])
