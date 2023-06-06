@@ -1,17 +1,12 @@
-/**
- * @param {any} obj
- * @param {any} classFunction
- * @return {boolean}
- */
-
 var checkIfInstanceOf = function (obj, classFunction) {
-    if (obj === null || obj === undefined || typeof classFunction !== 'function') return false
-    let proto = Object.getPrototypeOf(obj)
+    let result = false;
+    while (obj !== null && obj !== undefined) {
+        if (obj.constructor === classFunction) {
+            result = true;
+            break;
+        }
+        obj = obj.__proto__;
 
-    while (proto) {
-        if (proto === classFunction.prototype) return true
-        proto = Object.getPrototypeOf(proto)
     }
-
-    return false
+    return result;
 };
