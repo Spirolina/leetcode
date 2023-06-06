@@ -40,7 +40,6 @@ var topKFrequent = function (nums, k) {
             minCount = outs[0][1]
         }
     }
-    console.log(outs)
     result = outs.map(a => a[0])
     return result;
     
