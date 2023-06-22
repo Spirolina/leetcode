@@ -39,8 +39,7 @@ var minCost = function (nums, cost) {
             i++;
         }
 
-        console.log(cost1, cost2);
-        console.log(min, mid, max)
+
     }
 
 
