@@ -14,7 +14,6 @@ var addTwoNumbers = function (l1, l2) {
     let seek = result;
     let addition = 0;
     while (l1 || l2) {
-        console.log(l1.val, l2.val)
         let sum = l1.val + l2.val + addition;
         addition = Math.floor(sum / 10);
         seek.val = sum % 10;
